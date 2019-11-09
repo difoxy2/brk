@@ -1,0 +1,40 @@
+{
+    "manifest_version": 2,
+    "name": "brk",
+    "version": "1.0",
+    "description": "Lai Wai Yan's fyp",
+    
+    "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" },
+    
+    "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+        
+    "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  },
+    
+    //"page_action": {
+    //      "default_icon": {                    // optional
+    //        "16": "icon16.png",           // optional
+    //        "48": "icon48.png",           // optional
+    //        "128": "icon128.png"            // optional
+    //      },
+    //      "default_title": "brk option",      // optional; shown in tooltip
+    //      "default_popup": "popup.html"        // optional
+    //    },
+    
+    "options_page": "option.html",
+        
+    "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
+    
+    "permissions": [
+          "tabs","https://www.youtube.com/*","storage"
+        ]
+}
